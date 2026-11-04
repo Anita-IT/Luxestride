@@ -3,43 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Account | LuxeStride</title>
     <link rel="stylesheet" href="./style.css">
 </head>
-<body>
-     <nav>
-            <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="shop.html">Shop</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="account.html">Account</a></li>
-            </ul>
-           
-        </nav>
-        <section class="account">
-            <div class="form-container">
-                <div class="account-logo">
-            <img src="./images/my logo 2.png" alt="" width="100px" height="100px">
+<body class="account-page">
+    <header class="header shop-header">
+        <div class="content">
+            <div class="nav-bar">
+                <div class="logo">
+                    <img src="./images/my logo 2.png" alt="LuxeStride" width="150" height="150">
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="account.html" class="current" aria-current="page">Account</a></li>
+                    </ul>
+                    <img src="images/cart-removebg-preview.png" class="cart-icon" alt="">
+                    <img src="images/menu-icon.png" class="menu-icon" alt="">
+                </nav>
             </div>
-            <h2>Welcome to Luxestride</h2>
-            <p>Enter your email or phone number to Login or create an account.<p>
-           
-            <form action="">
-                <label for="email">Email or phone number:</label>
-                <input type="email" placeholder="Enter your email">
+        </div>
+    </header>
 
-                <label for="Password">Password:</label>
-                <input type="password" placeholder="Enter your password">
+    <main class="account">
+        <section class="form-container" aria-labelledby="account-heading">
+            <div class="account-logo">
+                <img src="./images/my logo 2.png" alt="" width="100" height="100">
+            </div>
+            <h1 id="account-heading">Welcome to LuxeStride</h1>
+            <p>Enter your email or phone number to log in or create an account.</p>
 
-                 <button type="submit" class="btn-login">Login</button>
+            <form action="#">
+                <label for="account-identity">Email or phone number</label>
+                <input type="text" id="account-identity" name="identity" autocomplete="username" required>
 
-                  <button type="button" class="btn-1">Log in with facebook</button>
-                <button type="button" class="btn-2">Log in with google  </button> 
+                <label for="account-password">Password</label>
+                <input type="password" id="account-password" name="password" autocomplete="current-password" required>
 
+                <button type="submit" class="btn-login">Log in</button>
+                <button type="button" class="btn-1">Log in with Facebook</button>
+                <button type="button" class="btn-2">Log in with Google</button>
             </form>
-            <p>Don't have an account? <a href="">Sign up</a></p>
-</div>
+
+            <p class="signup-prompt">Don't have an account? <a href="#">Sign up</a></p>
         </section>
+    </main>
+
+    <script>
+        const headerNav = document.querySelector(".header .nav-bar");
+        const updateHeaderNav = () => {
+            headerNav.classList.toggle("is-scrolled", window.scrollY > 48);
+        };
+
+        window.addEventListener("scroll", updateHeaderNav, { passive: true });
+        updateHeaderNav();
+    </script>
 </body>
 </html>

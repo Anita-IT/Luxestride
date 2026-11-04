@@ -6,24 +6,31 @@
     <title>shop</title>
     <link rel="stylesheet" href="./style.css">
 </head>
-<body>
-<!-- -----nav-bar------ -->
-  
-        <nav>
-            <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="shop.html">Shop</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="account.html">Account</a></li>
-            </ul>
-           
-        </nav>
-
+<body class="shop-page">
+    <header class="header shop-header">
+        <div class="content">
+            <div class="nav-bar is-scrolled">
+                <div class="logo">
+                    <img src="./images/my logo 2.png" alt="LuxeStride" width="150" height="150">
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html" class="current" aria-current="page">Shop</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="account.html">Account</a></li>
+                    </ul>
+                    <img src="images/cart-removebg-preview.png" class="cart-icon" alt="">
+                    <img src="images/menu-icon.png" class="menu-icon" alt="">
+                </nav>
+            </div>
+        </div>
+    </header>
 
    <!-- -----shop section------ -->
     <section class="shop-section">
-        <h1 class="shop-title" >Our Products</h1>
+        <!-- <h1 class="shop-title" >Our Products</h1> -->
 
         <div class="shop-grid">
             <div class="shop-product">
@@ -144,5 +151,14 @@
 
 
     </section>
+    <script>
+        const headerNav = document.querySelector(".header .nav-bar");
+        const updateHeaderNav = () => {
+            headerNav.classList.toggle("is-scrolled", window.scrollY > 48);
+        };
+
+        window.addEventListener("scroll", updateHeaderNav, { passive: true });
+        updateHeaderNav();
+    </script>
 </body>
 </html>

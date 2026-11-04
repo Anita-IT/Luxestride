@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cm's Luxe</title>
+    <title>LuxeStride</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,37 +13,30 @@
 </head>
 <body>
     <header class="header">
-    <div class="content">
+      <div class="content">
         <div class="nav-bar">
         <div class="logo">
-             <img src="./images/my logo 2.png" alt="" width="150px" height="150px">
+             <img src="./images/my logo 2.png" alt="" height="150px">
         </div>
         
         <nav>
             <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html" class="current" aria-current="page">Home</a></li>
             <li><a href="shop.html">Shop</a></li>
             <li><a href="contact.html">Contact Us</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="account.html">Account</a></li>
             </ul>
-           
+            <img src="images/cart-removebg-preview.png" class="cart-icon" alt="">
+            <img src="images/menu-icon.png" class="menu-icon" alt="">
         </nav>
-        
-        <img src="images/cart-removebg-preview.png" alt="" width="30px" height="30px">
-        <img src="images/menu-icon.png" class="menu-icon">
-    </div>
-    <div class="row">
-        <div class="col-2">
+        </div>
+        <div class="hero-copy">
             <h1>Where Your Next Look <br>Is Kept!</h1>
             <p>Carry Rarity. Wear Confidence.</p>
-            <a href="" class="btn">Explore Now  &#8594;</a>
+            <a href="shop.html" class="btn">Explore Now &#8594;</a>
         </div>
-         <div class="col-2">
-            <img src="images/modell.png" alt="">
-         </div>
-    </div>
-    </div>
+      </div>
     </header>
 
     <!-------Featured categories----->
@@ -365,5 +358,14 @@
            
 
         </footer>
+        <script>
+            const headerNav = document.querySelector(".header .nav-bar");
+            const updateHeaderNav = () => {
+                headerNav.classList.toggle("is-scrolled", window.scrollY > 48);
+            };
+
+            window.addEventListener("scroll", updateHeaderNav, { passive: true });
+            updateHeaderNav();
+        </script>
 </body>
 </html>
