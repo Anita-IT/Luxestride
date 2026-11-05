@@ -23,7 +23,9 @@
                         <li><a href="account.html">Account</a></li>
                     </ul>
                     <img src="images/cart-removebg-preview.png" class="cart-icon" alt="">
-                    <img src="images/menu-icon.png" class="menu-icon" alt="">
+                    <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">
+                        <img src="images/menu-icon.png" class="menu-icon" alt="">
+                    </button>
                 </nav>
             </div>
         </div>
@@ -167,14 +169,6 @@
 
 
     </section>
-    <script>
-        const headerNav = document.querySelector(".header .nav-bar");
-        const updateHeaderNav = () => {
-            headerNav.classList.toggle("is-scrolled", window.scrollY > 48);
-        };
-
-        window.addEventListener("scroll", updateHeaderNav, { passive: true });
-        updateHeaderNav();
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

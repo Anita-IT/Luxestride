@@ -22,7 +22,9 @@
                         <li><a href="account.html">Account</a></li>
                     </ul>
                     <img src="images/cart-removebg-preview.png" class="cart-icon" alt="">
-                    <img src="images/menu-icon.png" class="menu-icon" alt="">
+                    <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">
+                        <img src="images/menu-icon.png" class="menu-icon" alt="">
+                    </button>
                 </nav>
             </div>
         </div>
@@ -34,11 +36,14 @@
                 <img src="./images/shop 1.jpeg" alt="LuxeStride's curated footwear collection">
             </div>
             <div class="about-text">
+                <p class="about-eyebrow">Our story</p>
                 <h1 class="about-heading" id="about-heading">About Us</h1>
                 <p class="about-lead">Welcome to LuxeStride, a trusted destination for quality and excellence. We are committed to providing customers with carefully selected products that combine durability, style, and value.</p>
 
                 <h2 class="about-mission">Our Mission</h2>
                 <p class="about-lead">Our mission is to deliver an exceptional shopping experience by ensuring every item meets the highest standards of quality. We strive to exceed expectations through consistent professionalism, careful curation, and attentive customer service.</p>
+
+                <a class="about-cta" href="shop.html">Explore our collection <span aria-hidden="true">&rarr;</span></a>
             </div>
         </section>
 
@@ -63,14 +68,6 @@
         </section>
     </main>
 
-    <script>
-        const headerNav = document.querySelector(".header .nav-bar");
-        const updateHeaderNav = () => {
-            headerNav.classList.toggle("is-scrolled", window.scrollY > 48);
-        };
-
-        window.addEventListener("scroll", updateHeaderNav, { passive: true });
-        updateHeaderNav();
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

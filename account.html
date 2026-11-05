@@ -22,7 +22,9 @@
                         <li><a href="account.html" class="current" aria-current="page">Account</a></li>
                     </ul>
                     <img src="images/cart-removebg-preview.png" class="cart-icon" alt="">
-                    <img src="images/menu-icon.png" class="menu-icon" alt="">
+                    <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">
+                        <img src="images/menu-icon.png" class="menu-icon" alt="">
+                    </button>
                 </nav>
             </div>
         </div>
@@ -33,17 +35,21 @@
             <div class="account-logo">
                 <img src="./images/my logo 2.png" alt="" width="100" height="100">
             </div>
+            <!-- <span class="account-eyebrow">Member access</span> -->
             <h1 id="account-heading">Welcome to LuxeStride</h1>
             <p>Enter your email or phone number to log in or create an account.</p>
 
             <form action="#">
                 <label for="account-identity">Email or phone number</label>
-                <input type="text" id="account-identity" name="identity" autocomplete="username" required>
+                <input type="text" id="account-identity" name="identity" placeholder="Email or phone number" autocomplete="username" required>
 
                 <label for="account-password">Password</label>
-                <input type="password" id="account-password" name="password" autocomplete="current-password" required>
+                <input type="password" id="account-password" name="password" placeholder="Enter your password" autocomplete="current-password" required>
 
                 <button type="submit" class="btn-login">Log in</button>
+
+                <div class="account-divider"><span>or continue with</span></div>
+
                 <button type="button" class="btn-1">Log in with Facebook</button>
                 <button type="button" class="btn-2">Log in with Google</button>
             </form>
@@ -52,14 +58,6 @@
         </section>
     </main>
 
-    <script>
-        const headerNav = document.querySelector(".header .nav-bar");
-        const updateHeaderNav = () => {
-            headerNav.classList.toggle("is-scrolled", window.scrollY > 48);
-        };
-
-        window.addEventListener("scroll", updateHeaderNav, { passive: true });
-        updateHeaderNav();
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
