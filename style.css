@@ -1678,9 +1678,11 @@ ul{
     }
     .featured-section .featured-grid .col-4::after{
         top: 142px;
+        padding-top: 6px;
+        padding-bottom: 6px;
     }
     .featured-section .featured-grid .col-4 h4{
-        margin-top: 23px;
+        margin-top: 30px;
         font-size: 0.92rem;
     }
     .featured-section .featured-grid .col-4 p{
