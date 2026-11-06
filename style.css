@@ -1320,6 +1320,21 @@ ul{
     outline: 2px solid rgba(138, 75, 43, 0.35);
     outline-offset: 3px;
 }
+.form-status{
+    display: none;
+    margin: 16px 0 0;
+    padding: 12px 14px;
+    border: 1px solid rgba(138, 75, 43, 0.2);
+    border-radius: 12px;
+    background: #f7efe8;
+    color: #6c4934;
+    font-size: 0.86rem;
+    line-height: 1.5;
+    text-align: center;
+}
+.form-status.is-visible{
+    display: block;
+}
 /* -----site-wide responsive layout----- */
 @media (max-width: 1000px){
     .product-grid{
@@ -1510,15 +1525,18 @@ ul{
     }
     .product-grid,
     .shop-grid{
-        gap: 18px;
+        gap: 16px;
+    }
+    .shop-grid{
+        margin-bottom: 20px;
     }
     .col-4,
     .shop-product{
-        min-height: 350px;
+        min-height: 0;
     }
     .col-4 img,
     .shop-product img{
-        height: 200px;
+        height: 190px;
     }
     .offer{
         width: calc(100% - 32px);
@@ -1574,7 +1592,7 @@ ul{
         margin-top: 38px;
     }
     .shop-section{
-        padding: 112px 18px 40px;
+        padding: 96px 14px 32px;
     }
     .about-section,
     .contact,
@@ -1634,17 +1652,19 @@ ul{
     }
     .product-grid,
     .shop-grid{
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
     }
     .col-4,
     .shop-product{
         width: 100%;
         max-width: 380px;
         margin: 0 auto;
+        min-height: 0;
     }
     .col-4 img,
     .shop-product img{
-        height: 230px;
+        height: 150px;
     }
     .brands .row{
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1673,5 +1693,26 @@ ul{
     }
     .account-divider span{
         font-size: 0.76rem;
+    }
+}
+
+/* Shop has no hero content, so its header must not reserve a viewport of space. */
+@media (max-width: 900px){
+    .header.shop-header,
+    .header.shop-header .content{
+        min-height: 0 !important;
+        height: 0;
+    }
+    .shop-section{
+        padding-top: 96px;
+    }
+    .shop-section .shop-grid{
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: stretch;
+        width: 100%;
+        max-width: 760px;
+        margin-right: auto;
+        margin-left: auto;
     }
 }

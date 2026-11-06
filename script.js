@@ -47,3 +47,33 @@ const updateHeaderNav = () => {
 
 window.addEventListener("scroll", updateHeaderNav, { passive: true });
 updateHeaderNav();
+
+document.querySelectorAll("form[action='#']").forEach((form) => {
+    const status = form.querySelector(".form-status");
+
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+        }
+
+        if (status) {
+            status.textContent = form.classList.contains("contact-form")
+                ? "Thanks — your message is ready to be connected to email."
+                : "Your details are valid. Connect a backend to finish this action.";
+            status.classList.add("is-visible");
+        }
+    });
+});
+
+document.querySelectorAll(".btn-1, .btn-2").forEach((button) => {
+    button.addEventListener("click", () => {
+        const status = button.closest("form")?.querySelector(".form-status");
+        if (!status) return;
+
+        status.textContent = "Social sign-in needs to be connected to a provider first.";
+        status.classList.add("is-visible");
+    });
+});
