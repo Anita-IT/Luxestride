@@ -324,28 +324,6 @@ body.shop-page{
     white-space: nowrap;
 }
 
-@keyframes hero-bounce-swing{
-    0%, 100%{
-        transform: translateY(0) rotate(0deg);
-    }
-    20%{
-        transform: translateY(-10px) rotate(-2deg);
-    }
-    40%{
-        transform: translateY(0) rotate(2deg);
-    }
-    60%{
-        transform: translateY(-5px) rotate(-1deg);
-    }
-    80%{
-        transform: translateY(0) rotate(0deg);
-    }
-}
-.header .hero-copy h1{
-    animation: hero-bounce-swing 2.8s ease-in-out infinite;
-    transform-origin: center bottom;
-}
-
 @media (min-width: 761px){
     .header .hero-copy h1{
         white-space: nowrap;
@@ -358,9 +336,6 @@ body.shop-page{
     font-size: clamp(1rem, 1.5vw, 1.25rem);
 }
 @media (prefers-reduced-motion: reduce){
-    .header .hero-copy h1{
-        animation: none;
-    }
     .header .nav-bar,
     .header .logo img,
     .header nav a,
