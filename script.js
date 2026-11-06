@@ -87,6 +87,12 @@ if (featuredGrid) {
         featuredSection?.classList.add("is-cards-hovered");
     });
 
+    featuredGrid.addEventListener("mouseleave", (event) => {
+        if (!event.relatedTarget?.closest(".featured-scroll")) {
+            featuredSection?.classList.remove("is-cards-hovered");
+        }
+    });
+
     featuredSection?.addEventListener("mouseleave", () => {
         featuredSection.classList.remove("is-cards-hovered");
     });
