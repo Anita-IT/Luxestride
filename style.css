@@ -137,6 +137,9 @@ p{
     filter: brightness(0) invert(1);
     transition: filter 220ms ease;
 }
+.logo-link{
+    display: block;
+}
 .header .nav-bar.is-scrolled .logo img{
     filter: none;
 }
