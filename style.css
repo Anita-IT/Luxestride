@@ -677,6 +677,24 @@ small{
 .brands{
     margin: 100px auto;
 }
+.brands-viewport{
+    width: 100%;
+    overflow: hidden;
+}
+.brands-track{
+    display: flex;
+    width: max-content;
+    align-items: center;
+    animation: brands-marquee 24s linear infinite;
+    will-change: transform;
+}
+@keyframes brands-marquee{
+    from{ transform: translateX(0); }
+    to{ transform: translateX(-50%); }
+}
+.brands-track .col-5{
+    flex: 0 0 128px;
+}
 .col-5{
     width: 128px;
     padding: 14px;
@@ -1891,6 +1909,24 @@ ul{
     }
     .account-divider span{
         font-size: 0.76rem;
+    }
+}
+
+@media (max-width: 760px){
+    .brands-track{
+        animation-duration: 20s;
+    }
+    .brands-track .col-5{
+        flex-basis: 108px;
+        width: 108px;
+        max-width: none;
+        padding: 9px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce){
+    .brands-track{
+        animation: none;
     }
 }
 
