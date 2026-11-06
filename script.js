@@ -77,3 +77,28 @@ document.querySelectorAll(".btn-1, .btn-2").forEach((button) => {
         status.classList.add("is-visible");
     });
 });
+
+const featuredGrid = document.querySelector(".featured-section .featured-grid");
+
+if (featuredGrid) {
+    const featuredSection = featuredGrid.closest(".featured-section");
+
+    featuredGrid.addEventListener("mouseenter", () => {
+        featuredSection?.classList.add("is-cards-hovered");
+    });
+
+    featuredSection?.addEventListener("mouseleave", () => {
+        featuredSection.classList.remove("is-cards-hovered");
+    });
+
+    document.querySelectorAll(".featured-scroll").forEach((button) => {
+        button.addEventListener("click", () => {
+            const card = featuredGrid.querySelector(".col-4");
+            const distance = card ? card.getBoundingClientRect().width + 12 : 220;
+            featuredGrid.scrollBy({
+                left: button.dataset.scroll === "left" ? -distance : distance,
+                behavior: "smooth"
+            });
+        });
+    });
+}
