@@ -17,7 +17,8 @@ button{
     --card-image: #f3ebe4;
 }
 body{
-   font-family: "Poppins", sans-serif;
+   
+    font-family: "DM Sans", sans-serif;
    overflow-x: hidden;
 }
 
@@ -322,16 +323,44 @@ body.shop-page{
     display: block;
     white-space: nowrap;
 }
+
+@keyframes hero-bounce-swing{
+    0%, 100%{
+        transform: translateY(0) rotate(0deg);
+    }
+    20%{
+        transform: translateY(-10px) rotate(-2deg);
+    }
+    40%{
+        transform: translateY(0) rotate(2deg);
+    }
+    60%{
+        transform: translateY(-5px) rotate(-1deg);
+    }
+    80%{
+        transform: translateY(0) rotate(0deg);
+    }
+}
+.header .hero-copy h1{
+    animation: hero-bounce-swing 2.8s ease-in-out infinite;
+    transform-origin: center bottom;
+}
+
 @media (min-width: 761px){
     .header .hero-copy h1{
         white-space: nowrap;
-    }
+        font-family: "Playfair Display", "DM Sans", serif;
+}
+    
 }
 .header .hero-copy p{
     color: #f5eee9;
     font-size: clamp(1rem, 1.5vw, 1.25rem);
 }
 @media (prefers-reduced-motion: reduce){
+    .header .hero-copy h1{
+        animation: none;
+    }
     .header .nav-bar,
     .header .logo img,
     .header nav a,
@@ -468,7 +497,7 @@ body.shop-page{
     top: 190px;
     right: 0;
     left: 0;
-    padding: 4px 8px;
+    padding: 6px 8px;
     background: #f8e9c7;
     color: var(--brand-accent);
     font-size: 0.78rem;
@@ -482,7 +511,7 @@ body.shop-page{
     background: var(--card-image);
 }
 .featured-grid .col-4 h4{
-    margin-top: 24px;
+    margin-top: 42px;
     padding: 0 12px;
 }
 .featured-grid .col-4 .rating,
