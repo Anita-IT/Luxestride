@@ -542,8 +542,8 @@ small{
     margin: 100px auto;
 }
 .col-5{
-    width: 160px;
-     padding: 20px; 
+    width: 128px;
+    padding: 14px;
 }
 .col-5 img{
     width: 100%;
@@ -1551,7 +1551,9 @@ ul{
     }
     .col-5{
         width: 100%;
-        padding: 12px;
+        max-width: 108px;
+        padding: 9px;
+        margin: 0 auto;
     }
     .footer{
         width: calc(100% - 32px);
